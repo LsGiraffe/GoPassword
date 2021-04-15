@@ -1,6 +1,12 @@
 package file_writer
 
-func Check_db_file () file bool {
+func check(e error) {
+	if e != nil {
+		panic(e)
+	}
+}
+
+func Check_db_file() (bool) {
 	if not os.path.exists("rct_pass_file") {
 		file, err := os.Create("rct_pass_file")
 		check(err)
