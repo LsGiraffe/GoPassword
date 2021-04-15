@@ -1,6 +1,10 @@
 package file_writer
 
-import "os"
+import (
+	"fmt"
+
+	"os"
+)
 
 func check(e error) {
 	if e != nil {
@@ -8,8 +12,8 @@ func check(e error) {
 	}
 }
 
-func Check_db_file() (bool) {
-	if not os.path.exists("rct_pass_file") {
+func Check_db_file() bool {
+	if _, err := os.Stat("/path/to/whatever"); os.IsNotExist(err) {
 		file, err := os.Create("rct_pass_file")
 		check(err)
 		fmt.Println("Password file created")
@@ -19,8 +23,7 @@ func Check_db_file() (bool) {
 		check(err)
 		fmt.Printf("wrote %d bytes\n", n2)
 		return false
-	}
-	else {
+	} else {
 		fmt.Println("File found")
 		return true
 	}
