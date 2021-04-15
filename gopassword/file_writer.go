@@ -1,5 +1,7 @@
 package file_writer
 
+import "os"
+
 func check(e error) {
 	if e != nil {
 		panic(e)
