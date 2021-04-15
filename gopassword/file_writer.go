@@ -13,7 +13,7 @@ func check(e error) {
 }
 
 func Check_db_file() bool {
-	if _, err := os.Stat("/path/to/whatever"); os.IsNotExist(err) {
+	if _, err := os.Stat("rct_pass_file"); os.IsNotExist(err) {
 		file, err := os.Create("rct_pass_file")
 		check(err)
 		fmt.Println("Password file created")
