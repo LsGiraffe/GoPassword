@@ -48,7 +48,7 @@ func removeCmd(splt []string) {
 			file_array = append(file_array, splt_file)
 		}
 		for index, line := range file_array {
-			if line[0] == splt[0] && line[1] == splt[1] {
+			if line[0] == splt[1] && line[1] == splt[2] {
 				file_array = removeElem(file_array, index)
 			}
 		}
