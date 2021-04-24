@@ -29,7 +29,7 @@ func writeArrayInFile(array [][]string) {
 		err := ioutil.WriteFile("rct_pass_file", byte_write_string, 0644)
 		check(err)
 	}
-	fmt.Println("Removal complete\n")
+	fmt.Println("Removal complete")
 }
 
 func removeCmd(splt []string) {
