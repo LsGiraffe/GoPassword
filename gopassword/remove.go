@@ -12,6 +12,7 @@ func removeElem(array [][]string, index int) [][]string {
 	array[index] = array[len(array)-1]
 	array[len(array)-1] = nil
 	array = array[:len(array)-1]
+	fmt.Println("DEBUG1")
 	return array
 }
 
@@ -49,12 +50,19 @@ func removeCmd(splt []string) {
 		}
 		for index, line := range file_array {
 			if line[0] == splt[1] && line[1] == splt[2] {
+				fmt.Println("DEBUG2")
 				file_array = removeElem(file_array, index)
+				writeArrayInFile(file_array)
+				if err := scanner.Err(); err != nil {
+					check(err)
+				}
+				return
+			} else {
+				if err := scanner.Err(); err != nil {
+					check(err)
+				}
+				fmt.Println("Line not found")
 			}
-		}
-		writeArrayInFile(file_array)
-		if err := scanner.Err(); err != nil {
-			check(err)
 		}
 	}
 }
