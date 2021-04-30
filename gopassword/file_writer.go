@@ -1,4 +1,4 @@
-package file_writer
+package gopassword
 
 import (
 	"fmt"
@@ -19,12 +19,10 @@ func Check_db_file() bool {
 		fmt.Println("Password file created")
 		defer file.Close()
 		d2 := []byte("GoPassword storage file\n")
-		n2, err := file.Write(d2)
+		_, err = file.Write(d2)
 		check(err)
-		fmt.Printf("wrote %d bytes\n", n2)
 		return false
 	} else {
-		fmt.Println("File found")
 		return true
 	}
 }
