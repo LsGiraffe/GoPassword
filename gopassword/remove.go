@@ -59,8 +59,8 @@ func removeCmd(splt []string) {
 				if err := scanner.Err(); err != nil {
 					check(err)
 				}
-				fmt.Println("Service or username not found")
 			}
 		}
+		fmt.Println("Service or username not found")
 	}
 }

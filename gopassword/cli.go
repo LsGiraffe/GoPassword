@@ -30,6 +30,8 @@ func Run() {
 			removeCmd(splt)
 		} else if splt[0] == "mod" {
 			println("MOD")
+		} else if splt[0] == "unlock" {
+			unlockPassword(splt)
 		} else {
 			println("Unknown command")
 		}
