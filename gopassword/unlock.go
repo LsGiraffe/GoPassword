@@ -8,7 +8,7 @@ import (
 )
 
 func dispElem(array [][]string, index int) {
-	fmt.Println(array[index])
+	fmt.Println("The password of " + array[index][1] + " is : " + array[index][2])
 }
 
 func unlockPassword(splt []string) {
